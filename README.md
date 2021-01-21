@@ -19,16 +19,5 @@ In order to run this container you'll need docker installed.
 Run
 
 ```shell
-docker run -it -p 8080:8080 -v $(pwd)/:/home/coder/project mobomo/vscode_php:latest
+docker run -it mobomo/elastic_functionbeat:7.10.2
 ```
-
-Need to run within docker compose?
-
-    ide:
-        container_name: '${PROJECT_NAME}_ide'
-        image: mobomo/vscode_php:latest
-        volumes:
-          - ./:/home/coder/project
-        ports:
-            - '8080:8080'
-
