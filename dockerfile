@@ -9,6 +9,6 @@ RUN apk add --update-cache curl bash libc6-compat \
 	&& mv functionbeat-${FUNCTIONBEAT_VERSION}-linux-x86_64/functionbeat /bin/functionbeat && \
     chmod a+x /bin/functionbeat
 
-ENV PATH /bin/functionbeat:$PATH
+WORKDIR /functionbeat-${FUNCTIONBEAT_VERSION}-linux-x86_64
 
-ENTRYPOINT ["functionbeat"]
+ENV PATH /bin/functionbeat:$PATH
